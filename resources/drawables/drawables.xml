@@ -1,0 +1,7 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="svg-resources/RoseOfWind.svg">
+        <palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+    </bitmap>
+</drawables>

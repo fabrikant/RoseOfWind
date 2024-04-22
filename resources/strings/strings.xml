@@ -1,0 +1,12 @@
+<strings>
+    <string id="AppName">RoseOfWind</string>
+
+    <string id="NoData" scope="glance">No data</string>
+    <string id="WindSpeedUnit">Wind speed unit</string>
+    <string id="SpeedUnitMSec" scope="glance">m/s</string>
+    <string id="SpeedUnitKmH" scope="glance">km/h</string>
+    <string id="SpeedUnitMileH" scope="glance">mph</string>
+    <string id="SpeedUnitFtSec" scope="glance">fps</string>
+    <string id="SpeedUnitBeauf" scope="glance">beaufort</string>
+    <string id="SpeedUnitKnots" scope="glance">knots</string>
+</strings>
