@@ -1,0 +1,624 @@
+<drawables>
+
+	<bitmap id="BigNA" filename="./svg-resources/999-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<!-- Cloud -->
+	<bitmap id="BigCode800d" filename="./svg-resources/100-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode800n" filename="./svg-resources/150-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode801d" filename="./svg-resources/102-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode801n" filename="./svg-resources/152-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode802d" filename="./svg-resources/103-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode802n" filename="./svg-resources/153-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode803d" filename="./svg-resources/101-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode803n" filename="./svg-resources/151-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode804d" filename="./svg-resources/104-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode804n" filename="./svg-resources/104-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+
+	<!-- Thunderstorm -->
+	<bitmap id="BigCode200d" filename="./svg-resources/304-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode200n" filename="./svg-resources/304-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode201d" filename="./svg-resources/302-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode201n" filename="./svg-resources/302-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode202d" filename="./svg-resources/303-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode202n" filename="./svg-resources/303-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode210d" filename="./svg-resources/1043.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode210n" filename="./svg-resources/1043.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode211d" filename="./svg-resources/2015.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode211n" filename="./svg-resources/2015.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode212d" filename="./svg-resources/1014.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode212n" filename="./svg-resources/1014.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode221d" filename="./svg-resources/1014.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode221n" filename="./svg-resources/1014.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode230d" filename="./svg-resources/304-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode230n" filename="./svg-resources/304-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode231d" filename="./svg-resources/2024.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode231n" filename="./svg-resources/2024.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode232d" filename="./svg-resources/2024.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode232n" filename="./svg-resources/2024.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+
+	<!-- Drizzle -->
+	<bitmap id="BigCode300d" filename="./svg-resources/309-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode300n" filename="./svg-resources/309-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode301d" filename="./svg-resources/312-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode301n" filename="./svg-resources/312-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode302d" filename="./svg-resources/1035.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode302n" filename="./svg-resources/1035.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode310d" filename="./svg-resources/314-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode310n" filename="./svg-resources/314-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode311d" filename="./svg-resources/315-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode311n" filename="./svg-resources/315-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode312d" filename="./svg-resources/316-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode312n" filename="./svg-resources/316-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode313d" filename="./svg-resources/317-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode313n" filename="./svg-resources/317-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode314d" filename="./svg-resources/318-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode314n" filename="./svg-resources/318-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode321d" filename="./svg-resources/308-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode321n" filename="./svg-resources/308-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+
+	<!-- Rain -->
+	<bitmap id="BigCode500d" filename="./svg-resources/300-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode500n" filename="./svg-resources/350-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode501d" filename="./svg-resources/300-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode501n" filename="./svg-resources/350-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode502d" filename="./svg-resources/301-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode502n" filename="./svg-resources/351-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode503d" filename="./svg-resources/301-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode503n" filename="./svg-resources/351-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode504d" filename="./svg-resources/301-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode504n" filename="./svg-resources/351-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode511d" filename="./svg-resources/1015.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode511n" filename="./svg-resources/1015.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode520d" filename="./svg-resources/305.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode520n" filename="./svg-resources/305.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode521d" filename="./svg-resources/306.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode521n" filename="./svg-resources/306.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode522d" filename="./svg-resources/307.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode522n" filename="./svg-resources/307.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode531d" filename="./svg-resources/301-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode531n" filename="./svg-resources/351-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+
+	<!-- Snow -->
+	<bitmap id="BigCode600d" filename="./svg-resources/407-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode600n" filename="./svg-resources/457-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode601d" filename="./svg-resources/400-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode601n" filename="./svg-resources/400-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode602d" filename="./svg-resources/401-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode602n" filename="./svg-resources/401-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode611d" filename="./svg-resources/408-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode611n" filename="./svg-resources/408-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode612d" filename="./svg-resources/409-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode612n" filename="./svg-resources/409-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode613d" filename="./svg-resources/410-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode613n" filename="./svg-resources/410-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode615d" filename="./svg-resources/406-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode615n" filename="./svg-resources/456-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode616d" filename="./svg-resources/404-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode616n" filename="./svg-resources/404-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode620d" filename="./svg-resources/1033.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode620n" filename="./svg-resources/1033.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode621d" filename="./svg-resources/1004.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode621n" filename="./svg-resources/1004.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode622d" filename="./svg-resources/499-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode622n" filename="./svg-resources/499-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<!-- Atmosphere -->
+	<bitmap id="BigCode701d" filename="./svg-resources/501-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode701n" filename="./svg-resources/501-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode711d" filename="./svg-resources/smoke.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode711n" filename="./svg-resources/smoke.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode721d" filename="./svg-resources/502-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode721n" filename="./svg-resources/502-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode731d" filename="./svg-resources/2010.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode731n" filename="./svg-resources/2010.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode741d" filename="./svg-resources/1017.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode741n" filename="./svg-resources/1017.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode751d" filename="./svg-resources/1051.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode751n" filename="./svg-resources/1051.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode761d" filename="./svg-resources/504-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode761n" filename="./svg-resources/504-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode762d" filename="./svg-resources/504-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode762n" filename="./svg-resources/504-fill.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode771d" filename="./svg-resources/1602.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode771n" filename="./svg-resources/1602.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+	<bitmap id="BigCode781d" filename="./svg-resources/1002.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+	<bitmap id="BigCode781n" filename="./svg-resources/1002.svg" scaleX="25%" scaleY="25%" scaleRelativeTo="screen" scope="foreground">
+		<palette disableTransparency="false">
+			<color>FFFFFF</color>
+		</palette>
+	</bitmap>
+
+</drawables>

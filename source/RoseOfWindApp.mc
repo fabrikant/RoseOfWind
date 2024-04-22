@@ -4,30 +4,33 @@ import Toybox.WatchUi;
 
 (:glance)
 class RoseOfWindApp extends Application.AppBase {
+  function initialize() {
+    AppBase.initialize();
+  }
 
-    function initialize() {
-        AppBase.initialize();
+  function onStart(state) {
+    ForecastOWM.startRequest(self.method(:onWeatherUpdate));
+  }
+
+  function onStop(state) {}
+
+  function getInitialView() {
+    var loop = new RoseOfWindLoop();
+    return [loop, new RoseOfWindLoopDelegate(loop)];
+  }
+
+  function getGlanceView() {
+    return [new RoseOfWindGlance()];
+  }
+
+  function onWeatherUpdate(code, data) {
+    if (code == 200) {
+      ForecastOWM.saveForecast(data);
+      WatchUi.requestUpdate();
     }
-
-    // onStart() is called on application start up
-    function onStart(state as Dictionary?) as Void {
-    }
-
-    // onStop() is called when your application is exiting
-    function onStop(state as Dictionary?) as Void {
-    }
-
-    // Return the initial view of your application here
-    function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [ new RoseOfWindView() ];
-    }
-
-    function getGlanceView(){
-        return [new RoseOfWindGlance()];
-    }
-
+  }
 }
 
-function getApp() as RoseOfWindApp {
-    return Application.getApp() as RoseOfWindApp;
+function getApp() {
+  return Application.getApp() as RoseOfWindApp;
 }

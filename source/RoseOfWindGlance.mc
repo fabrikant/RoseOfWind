@@ -58,7 +58,7 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
 
     //image
     if (rez != null) {
-      var bitmap = Global.createImage(rez, color);
+      var bitmap = Application.loadResource(rez);
 
       temp_y += (dc.getHeight() - temp_y - bitmap.getHeight()) / 2;
 

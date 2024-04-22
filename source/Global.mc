@@ -65,22 +65,6 @@ module Global {
     return buf_bitmap_ref;
   }
 
-  function createImage(resource, color) {
-    if (resource instanceof Graphics.BufferedBitmapReference) {
-      return resource;
-    }
-
-    var _bitmap = Application.loadResource(resource);
-    var _bufferedBitmapRef = Graphics.createBufferedBitmap({
-      :bitmapResource => _bitmap,
-      :width => _bitmap.getWidth(),
-      :height => _bitmap.getHeight(),
-    });
-    var _bufferedBitmap = _bufferedBitmapRef.get();
-    _bufferedBitmap.setPalette([color, Graphics.COLOR_TRANSPARENT]);
-    return _bufferedBitmapRef;
-  }
-
   function convertPressure(value) {
     var rawData = value;
     var unit = Application.Properties.getValue("PressureUnit");
