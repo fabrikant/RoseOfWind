@@ -107,7 +107,7 @@ class RoseOfWindView extends WatchUi.View {
       Global.getTempColor(data[Global.KEY_TEMP], color),
       Graphics.COLOR_TRANSPARENT
     );
-    str = Global.convertTemperature(data[Global.KEY_TEMP]) + postfixTemp();
+    str = Global.convertTemperature(data[Global.KEY_TEMP]) + Global.postfixTemp();
     dc.drawText(center[0] / 2, temp_y, font, str, Graphics.TEXT_JUSTIFY_CENTER);
 
     //*************************************************************************
@@ -184,7 +184,7 @@ class RoseOfWindView extends WatchUi.View {
 
     str =
       Global.convertTemperature(data[Global.KEY_TEMP_FEELS_LIKE]) +
-      postfixTemp() +
+      Global.postfixTemp() +
       " " +
       Application.loadResource(Rez.Strings.Feels);
     bitmap = Application.loadResource(Rez.Drawables.Temperature);
@@ -214,13 +214,6 @@ class RoseOfWindView extends WatchUi.View {
   }
 }
 
-function postfixTemp() {
-  if (System.getDeviceSettings().temperatureUnits == System.UNIT_STATUTE) {
-    return "F";
-  } else {
-    return "C";
-  }
-}
 class RoseOfWindViewDelegate extends WatchUi.BehaviorDelegate {
   private var index;
 

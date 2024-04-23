@@ -28,14 +28,8 @@ class RoseOfWindApp extends Application.AppBase {
     if (owm_key.equals("")) {
       return [new NoKeyView(), new NoKeyDelegate()];
     } else {
-      var factory = new RoseOfWindLoopFactory();
-      loop_factory_weak = factory.weak();
-      var loop = new Toybox.WatchUi.ViewLoop(factory, {
-        :page => 0,
-        :wrap => true,
-        :color => Graphics.COLOR_PURPLE,
-      });
-      return [loop, new RoseOfWindLoopDelegate(loop)];
+
+      return [new WeatherMenu(), new WeatherMenuDelegate()];
     }
   }
 

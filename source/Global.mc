@@ -38,6 +38,14 @@ module Global {
     UNIT_PRESSURE_KPA,
   }
 
+  function postfixTemp() {
+    if (System.getDeviceSettings().temperatureUnits == System.UNIT_STATUTE) {
+      return "F";
+    } else {
+      return "C";
+    }
+  }
+
   function vectorFontName() {
     return ["RobotoCondensedRegular", "RobotoRegular"];
   }
@@ -67,7 +75,7 @@ module Global {
   }
 
   function convertPressure(value) {
-    var rawData = value*100;
+    var rawData = value * 100;
     var unit_str = "";
     var unit = Application.Properties.getValue("PressureUnit");
     if (unit == UNIT_PRESSURE_MM_HG) {
@@ -91,7 +99,7 @@ module Global {
       value = (rawData / 1000).format("%d");
       unit_str = Application.loadResource(Rez.Strings.PrUKPa);
     }
-    return Lang.format("$1$$2$",[value,unit_str]);
+    return Lang.format("$1$$2$", [value, unit_str]);
   }
 
   function convertTemperature(сelsius) {
