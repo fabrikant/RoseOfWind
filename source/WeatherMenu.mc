@@ -19,8 +19,23 @@ class WeatherMenu extends WatchUi.CustomMenu {
 
   function addItems() {
     var data = Application.Storage.getValue(Global.KEY_FORECAST);
-    for (var i = 0; i < data.size(); i++) {
-      addItem(new WeatherMenuItem(i, data[i]));
+    if (data instanceof Lang.Array) {
+      for (var i = 0; i < data.size(); i++) {
+        addItem(new WeatherMenuItem(i, data[i]));
+      }
+    }
+  }
+
+  function onWeatherUpdate() {
+    var data = Application.Storage.getValue(Global.KEY_FORECAST);
+    if (data instanceof Lang.Array) {
+      for (var i = 0; i < data.size(); i++) {
+        var item = getItem(i);
+        if (item != null) {
+          item.setData(data[i]);
+        }
+      }
+      WatchUi.requestUpdate();
     }
   }
 }
@@ -33,6 +48,10 @@ class WeatherMenuItem extends WatchUi.CustomMenuItem {
     CustomMenuItem.initialize(index, {
       :drawable => createEmptyDrawable(index),
     });
+  }
+
+  function setData(data) {
+    self.data = data;
   }
 
   function draw(dc) {

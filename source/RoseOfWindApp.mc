@@ -6,10 +6,10 @@ import Toybox.Weather;
 
 (:glance)
 class RoseOfWindApp extends Application.AppBase {
-  var loop_factory_weak;
+  var menu_weak;
 
   function initialize() {
-    loop_factory_weak = null;
+    menu_weak = null;
     AppBase.initialize();
     captureLocation();
     startRequest();
@@ -28,8 +28,9 @@ class RoseOfWindApp extends Application.AppBase {
     if (owm_key.equals("")) {
       return [new NoKeyView(), new NoKeyDelegate()];
     } else {
-
-      return [new WeatherMenu(), new WeatherMenuDelegate()];
+      var menu = new WeatherMenu();
+      menu_weak = menu.weak();
+      return [menu, new WeatherMenuDelegate()];
     }
   }
 
@@ -40,10 +41,10 @@ class RoseOfWindApp extends Application.AppBase {
   function onWeatherUpdate(code, data) {
     if (code == 200) {
       ForecastOWM.saveForecast(data);
-      if (loop_factory_weak != null) {
-        if (loop_factory_weak.stillAlive()) {
-          var factory = loop_factory_weak.get();
-          factory.onWeatherUpdate();
+      if (menu_weak != null) {
+        if (menu_weak.stillAlive()) {
+          var obj = menu_weak.get();
+          obj.onWeatherUpdate();
         }
       }
       WatchUi.requestUpdate();

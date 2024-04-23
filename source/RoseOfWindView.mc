@@ -72,9 +72,10 @@ class RoseOfWindView extends WatchUi.View {
 
     //*************************************************************************
     //Date Time
-    var angle_offset = 42;
+    //var angle_offset = 42;
     var moment = new Time.Moment(data[Global.KEY_DT]);
     var info = Time.Gregorian.info(moment, Time.FORMAT_LONG);
+    var info_short = Time.Gregorian.info(moment, Time.FORMAT_SHORT);
     dc.drawText(
       dc.getWidth() / 4,
       temp_y - font_h,
@@ -85,15 +86,24 @@ class RoseOfWindView extends WatchUi.View {
       ]),
       Graphics.TEXT_JUSTIFY_CENTER
     );
-    dc.drawRadialText(
-      center[0],
-      center[1],
+
+    dc.drawText(
+      (dc.getWidth() * 3) / 4,
+      temp_y - font_h,
       font,
-      Lang.format("$1$, $2$ $3$", [info.day_of_week, info.day, info.month]),
-      Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER,
-      90 - angle_offset,
-      center[1] - font_h * 1.2,
-      Graphics.RADIAL_TEXT_DIRECTION_CLOCKWISE
+      Lang.format("$1$/$2$", [
+        info_short.day.format("%02d"),
+        info_short.month.format("%02d"),
+      ]),
+      Graphics.TEXT_JUSTIFY_CENTER
+    );
+
+    dc.drawText(
+      center[0] + bitmap.getWidth() / 2,
+      temp_y - 2 * font_h,
+      font,
+      info.day_of_week,
+      Graphics.TEXT_JUSTIFY_LEFT
     );
 
     //*************************************************************************
@@ -107,7 +117,8 @@ class RoseOfWindView extends WatchUi.View {
       Global.getTempColor(data[Global.KEY_TEMP], color),
       Graphics.COLOR_TRANSPARENT
     );
-    str = Global.convertTemperature(data[Global.KEY_TEMP]) + Global.postfixTemp();
+    str =
+      Global.convertTemperature(data[Global.KEY_TEMP]) + Global.postfixTemp();
     dc.drawText(center[0] / 2, temp_y, font, str, Graphics.TEXT_JUSTIFY_CENTER);
 
     //*************************************************************************

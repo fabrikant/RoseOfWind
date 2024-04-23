@@ -41,6 +41,9 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
     var font_h = Graphics.getFontHeight(font);
     var temp_y = 0;
 
+    // dc.drawLine(0, 0, dc.getWidth(), 0);
+    // dc.drawLine(0, dc.getHeight()-1, dc.getWidth(), dc.getHeight()-1);
+
     //condition
     dc.drawText(
       0,
