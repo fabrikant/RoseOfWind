@@ -13,8 +13,8 @@ class WeatherMenu extends WatchUi.CustomMenu {
       Graphics.COLOR_BLACK,
       {}
     );
-
     addItems();
+    ForecastOWM.startRequest(self.method(:onWeatherUpdate));
   }
 
   function addItems() {
@@ -26,13 +26,16 @@ class WeatherMenu extends WatchUi.CustomMenu {
     }
   }
 
-  function onWeatherUpdate() {
-    var data = Application.Storage.getValue(Global.KEY_FORECAST);
-    if (data instanceof Lang.Array) {
+  function onWeatherUpdate(code, inet_data) {
+    if (code == 200) {
+      ForecastOWM.saveForecast(inet_data);
+      var data = Application.Storage.getValue(Global.KEY_FORECAST);
       for (var i = 0; i < data.size(); i++) {
         var item = getItem(i);
         if (item != null) {
           item.setData(data[i]);
+        } else {
+          addItem(new WeatherMenuItem(i, data[i]));
         }
       }
       WatchUi.requestUpdate();
@@ -106,6 +109,7 @@ class WeatherMenuItem extends WatchUi.CustomMenuItem {
       :size => bitmap.getHeight(),
     });
     var font_temp_h = Graphics.getFontHeight(font_temp);
+    var max_l_temp = dc.getTextWidthInPixels("-40°C", font_temp);
 
     dc.setColor(
       Global.getTempColor(data[Global.KEY_TEMP], color),
@@ -113,9 +117,15 @@ class WeatherMenuItem extends WatchUi.CustomMenuItem {
     );
     var str =
       Global.convertTemperature(data[Global.KEY_TEMP]) + Global.postfixTemp();
-    dc.drawText(temp_x, temp_y, font_temp, str, Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(
+      temp_x + max_l_temp / 2,
+      temp_y,
+      font_temp,
+      str,
+      Graphics.TEXT_JUSTIFY_CENTER
+    );
     dc.setColor(color, Graphics.COLOR_TRANSPARENT);
-    temp_x += dc.getTextWidthInPixels("-40°C", font_temp);
+    temp_x += max_l_temp;
 
     //*************************************************************************
     //Wind

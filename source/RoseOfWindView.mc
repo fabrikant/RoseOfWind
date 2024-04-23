@@ -234,14 +234,6 @@ class RoseOfWindViewDelegate extends WatchUi.BehaviorDelegate {
   }
 
   public function onSelect() {
-    System.println("onSelect");
-    // if (_index == 0) {
-    //     WatchUi.pushView(new $.ApesView(), new $.DetailsDelegate(), WatchUi.SLIDE_UP);
-    // } else if (_index == 1) {
-    //     WatchUi.pushView(new $.MonkeysView(), new $.DetailsDelegate(), WatchUi.SLIDE_UP);
-    // } else if (_index == 2) {
-    //     WatchUi.pushView(new $.ProsimiansView(), new $.DetailsDelegate(), WatchUi.SLIDE_UP);
-    // }
     return true;
   }
 }

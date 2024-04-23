@@ -12,11 +12,6 @@ class RoseOfWindApp extends Application.AppBase {
     menu_weak = null;
     AppBase.initialize();
     captureLocation();
-    startRequest();
-  }
-
-  function startRequest() {
-    ForecastOWM.startRequest(self.method(:onWeatherUpdate));
   }
 
   function onStart(state) {}
@@ -36,19 +31,6 @@ class RoseOfWindApp extends Application.AppBase {
 
   function getGlanceView() {
     return [new RoseOfWindGlance()];
-  }
-
-  function onWeatherUpdate(code, data) {
-    if (code == 200) {
-      ForecastOWM.saveForecast(data);
-      if (menu_weak != null) {
-        if (menu_weak.stillAlive()) {
-          var obj = menu_weak.get();
-          obj.onWeatherUpdate();
-        }
-      }
-      WatchUi.requestUpdate();
-    }
   }
 
   function captureLocation() {

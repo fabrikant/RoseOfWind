@@ -15,7 +15,7 @@ module ForecastOWM {
       "lang" => CommonOWM.getLang(),
     };
     var req = new RequestDelegate(
-      new Lang.Method(CurrentOWM, :onResponse),
+      new Lang.Method(ForecastOWM, :onResponse),
       callback
     );
     req.makeWebRequest(url, parametres, {});
