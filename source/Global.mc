@@ -2,6 +2,7 @@ import Toybox.System;
 import Toybox.Application;
 import Toybox.Math;
 import Toybox.Graphics;
+import Toybox.Lang;
 
 (:glance)
 module Global {
@@ -66,25 +67,32 @@ module Global {
   }
 
   function convertPressure(value) {
-    var rawData = value;
+    System.println(value);
+    var rawData = value*100;
+    var unit_str = "";
     var unit = Application.Properties.getValue("PressureUnit");
     if (unit == UNIT_PRESSURE_MM_HG) {
       /*MmHg*/
       value = Math.round(rawData / 133.322).format("%d");
+      unit_str = Application.loadResource(Rez.Strings.PrUMmHg);
     } else if (unit == UNIT_PRESSURE_PSI) {
       /*Psi*/
       value = (rawData.toFloat() / 6894.757).format("%.2f");
+      unit_str = Application.loadResource(Rez.Strings.PrUPsi);
     } else if (unit == UNIT_PRESSURE_INCH_HG) {
       /*InchHg*/
       value = (rawData.toFloat() / 3386.389).format("%.2f");
+      unit_str = Application.loadResource(Rez.Strings.PrUInchHg);
     } else if (unit == UNIT_PRESSURE_BAR) {
       /*miliBar*/
       value = (rawData / 100).format("%d");
+      unit_str = Application.loadResource(Rez.Strings.PrUBar);
     } else if (unit == UNIT_PRESSURE_KPA) {
       /*kPa*/
       value = (rawData / 1000).format("%d");
+      unit_str = Application.loadResource(Rez.Strings.PrUKPa);
     }
-    return value;
+    return Lang.format("$1$$2$",[value,unit_str]);
   }
 
   function convertTemperature(сelsius) {
@@ -167,5 +175,58 @@ module Global {
     } else {
       return 0;
     }
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  function getWindColor(windSpeed, default_color) {
+    var color = default_color;
+
+    var bf = getBeaufort(windSpeed);
+    if (bf > 9) {
+      color = 0xff0000;
+    } else if (bf > 8) {
+      color = 0xff00aa;
+    } else if (bf > 7) {
+      color = 0xffaaff;
+    } else if (bf > 6) {
+      color = 0x00ffff;
+    } else if (bf > 5) {
+      color = 0xaaffff;
+    } else if (bf > 4) {
+      color = Graphics.COLOR_YELLOW;
+    } else if (bf > 3) {
+      color = 0x00ff00;
+    } else if (bf > 2) {
+      color = 0x55ff55;
+    } else {
+      color = Graphics.COLOR_WHITE;
+    }
+    return color;
+  }
+
+  function getTempColor(temp, default_color) {
+    var color = default_color;
+    if (temp > 30) {
+      color = 0xff0000;
+    } else if (temp > 25) {
+      color = 0xff0055;
+    } else if (temp > 20) {
+      color = 0x00ff00;
+    } else if (temp > 15) {
+      color = 0x00ff55;
+    } else if (temp > 10) {
+      color = 0x55ff00;
+    } else if (temp > 5) {
+      color = 0xffff00;
+    } else if (temp > 0) {
+      color = 0xffffaa;
+    } else if (temp > -10) {
+      color = 0xaaffff;
+    } else if (temp > -20) {
+      color = 0x55ffff;
+    } else {
+      color = 0x00ffff;
+    }
+    return color;
   }
 }

@@ -1,16 +1,5 @@
 import Toybox.WatchUi;
 
-class RoseOfWindLoop extends WatchUi.ViewLoop {
-  function initialize() {
-    var factory = new RoseOfWindLoopFactory();
-    ViewLoop.initialize(factory, {
-      :page => 0,
-      :wrap => true,
-      :color => Graphics.COLOR_PURPLE,
-    });
-  }
-}
-
 class RoseOfWindLoopDelegate extends WatchUi.ViewLoopDelegate {
   private var view_loop;
 
@@ -36,6 +25,10 @@ class RoseOfWindLoopFactory extends WatchUi.ViewLoopFactory {
   function initialize() {
     data = Application.Storage.getValue(Global.KEY_FORECAST);
     ViewLoopFactory.initialize();
+  }
+
+  function onWeatherUpdate(){
+    data = Application.Storage.getValue(Global.KEY_FORECAST);
   }
 
   function getView(page) {

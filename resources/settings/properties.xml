@@ -1,8 +1,8 @@
 <properties>
 
 	<property id="keyOW" type="string"></property>
-	<property id="Lat" type="float">54.5</property>
-	<property id="Lon" type="float">74.0</property>
+	<property id="Lat" type="float">0</property>
+	<property id="Lon" type="float">0</property>
 	<property id="WindSpeedUnit" type="number">0</property>
 	<property id="PressureUnit" type="number">0</property>
 	

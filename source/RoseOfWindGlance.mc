@@ -17,7 +17,7 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
 
   function onUpdate(dc) {
     dc.clear();
-    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
     //dc.drawRectangle(0, 0, dc.getWidth(), dc.getHeight());
 
     var weather = Application.Storage.getValue(Global.KEY_CURRENT);
@@ -36,7 +36,8 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
 
   function drawGlance(dc, data) {
     var color = Graphics.COLOR_WHITE;
-    dc.setColor(color, Graphics.COLOR_TRANSPARENT);
+    var color_bkgnd = Graphics.COLOR_BLACK;
+    dc.setColor(color, color_bkgnd);
     var font = Graphics.FONT_GLANCE;
     var font_h = Graphics.getFontHeight(font);
     var temp_y = 0;
@@ -72,15 +73,18 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
     }
 
     //temperature
+    dc.setColor(Global.getTempColor(data[Global.KEY_TEMP], color), color_bkgnd);
     var str = Global.convertTemperature(data[Global.KEY_TEMP]);
     dc.drawText(temp_x, temp_y, font, str, Graphics.TEXT_JUSTIFY_LEFT);
     temp_x += dc.getTextWidthInPixels(str, font);
+    dc.setColor(color, color_bkgnd);
 
     //wind arrow
     var wind_angle = data[Global.KEY_WIND_DEG];
     if (wind_angle != null) {
+      var wind_color = Global.getWindColor(data[Global.KEY_WIND_SPEED], color);
       if (wind_bitmap == null) {
-        wind_bitmap = Global.getWindArrowImage(font_h, color);
+        wind_bitmap = Global.getWindArrowImage(font_h, wind_color);
       }
 
       if (wind_bitmap instanceof Graphics.BufferedBitmapReference) {
@@ -101,7 +105,7 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
         temp_x += font_h;
 
         font = Graphics.FONT_GLANCE;
-        font_h =  Graphics.getFontHeight(font);
+        font_h = Graphics.getFontHeight(font);
         dc.drawText(
           dc.getWidth(),
           dc.getHeight() - font_h,

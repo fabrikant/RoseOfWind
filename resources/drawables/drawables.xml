@@ -4,4 +4,23 @@
             <color>FFFFFF</color>
         </palette>
     </bitmap>
+
+    <bitmap id="Humidity" filename="./svg-resources/2019.svg" scaleX="8%" scaleY="8%" scaleRelativeTo="screen" scope="foreground">
+        <palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+    </bitmap>
+
+    <bitmap id="Temperature" filename="./svg-resources/termometer.svg" scaleX="8%" scaleY="8%" scaleRelativeTo="screen" scope="foreground">
+        <palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+    </bitmap>
+
+    <bitmap id="Pressure" filename="./svg-resources/barometer.svg" scaleX="8%" scaleY="8%" scaleRelativeTo="screen" scope="foreground">
+        <palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+    </bitmap>
+
 </drawables>

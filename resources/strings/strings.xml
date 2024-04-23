@@ -9,4 +9,19 @@
     <string id="SpeedUnitFtSec" scope="glance">fps</string>
     <string id="SpeedUnitBeauf" scope="glance">beaufort</string>
     <string id="SpeedUnitKnots" scope="glance">knots</string>
+
+    <!--PRESSURE UNITS -->
+    <string id="PressureUnit" scope="foreground">Pressure unit</string>
+    <string id="PrUMmHg" scope="foreground">mmHg</string>
+    <string id="PrUPsi" scope="foreground">Psi</string>
+    <string id="PrUInchHg" scope="foreground">inchHg</string>
+    <string id="PrUBar" scope="foreground">milibar</string>
+    <string id="PrUKPa" scope="foreground">kPa</string>
+
+    <string id="Feels" scope="foreground">feels</string>
+    <string id="keyOW" scope="foreground">API key for weather</string>
+    <string id="Lat" scope="foreground">Latitude</string>
+    <string id="Lon" scope="foreground">Longitude</string>
+
+
 </strings>

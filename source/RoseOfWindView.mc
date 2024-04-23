@@ -7,11 +7,10 @@ import Toybox.System;
 
 class RoseOfWindView extends WatchUi.View {
   var page, data;
-  var wind_bitmap;
+
   function initialize(page, data) {
     self.page = page;
     self.data = data;
-    self.wind_bitmap = null;
     View.initialize();
   }
 
@@ -79,12 +78,14 @@ class RoseOfWindView extends WatchUi.View {
       :size => Math.floor(dc.getHeight() * 0.2).toNumber(),
     });
     font_h = Graphics.getFontHeight(font);
+    dc.setColor(Global.getTempColor(data[Global.KEY_TEMP], color), color_bkgnd);
     str = Global.convertTemperature(data[Global.KEY_TEMP]) + postfixTemp();
     dc.drawText(center[0] / 2, temp_y, font, str, Graphics.TEXT_JUSTIFY_CENTER);
 
     //*************************************************************************
     //Wind
-    wind_bitmap = Global.getWindArrowImage(font_h * 0.9, color);
+    var wind_color = Global.getWindColor(data[Global.KEY_WIND_SPEED], color);
+    var wind_bitmap = Global.getWindArrowImage(font_h * 0.9, wind_color);
     var wind_angle = data[Global.KEY_WIND_DEG];
     if (wind_bitmap instanceof Graphics.BufferedBitmapReference) {
       var transform = new Graphics.AffineTransform();
@@ -106,7 +107,7 @@ class RoseOfWindView extends WatchUi.View {
         :size => Math.floor(dc.getHeight() * 0.1).toNumber(),
       });
 
-      //dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_RED);
+      dc.setColor(color, color_bkgnd);
       dc.drawText(
         center[0] + font_h,
         arrow_y,
@@ -117,12 +118,58 @@ class RoseOfWindView extends WatchUi.View {
     }
 
     //*************************************************************************
-    //City and date
+    //Decoration
+    temp_y += font_h + 5;
+    var temp_x1 = dc.getWidth() * 0.40;
+    var y_offset = dc.getHeight() * 0.9;
+    dc.setColor(Graphics.COLOR_DK_GRAY, color_bkgnd);
+    dc.setPenWidth(5);
+    dc.drawLine(temp_x1, temp_y, temp_x1, y_offset);
+    dc.setColor(color, color_bkgnd);
+    dc.setPenWidth(1);
+    dc.drawLine(temp_x1, temp_y, temp_x1, y_offset);
+
+    var temp_x2 = dc.getWidth() * 0.15;
+    dc.setColor(Graphics.COLOR_DK_GRAY, color_bkgnd);
+    dc.setPenWidth(5);
+    dc.drawLine(temp_x2, temp_y, dc.getWidth() - temp_x2, temp_y);
+    dc.setColor(color, color_bkgnd);
+    dc.setPenWidth(1);
+    dc.drawLine(temp_x2, temp_y, dc.getWidth() - temp_x2, temp_y);
+
+    //*************************************************************************
+    //Other values
     font = Graphics.getVectorFont({
       :face => Global.vectorFontName(),
       :size => Math.floor(dc.getHeight() * 0.1).toNumber(),
     });
 
+    temp_y += 5;
+    dc.setColor(color, color_bkgnd);
+
+    str = Global.convertPressure(data[Global.KEY_PRESSURE]);
+    var bitmap = Application.loadResource(Rez.Drawables.Pressure);
+    dc.drawBitmap(temp_x1 - bitmap.getWidth() * 1.1, temp_y, bitmap);
+    dc.drawText(temp_x1 + 5, temp_y, font, str, Graphics.TEXT_JUSTIFY_LEFT);
+
+    temp_y += bitmap.getHeight() * 1.2;
+    
+    str =
+      Global.convertTemperature(data[Global.KEY_TEMP_FEELS_LIKE]) +
+      postfixTemp() +" "+Application.loadResource(Rez.Strings.Feels);
+    bitmap = Application.loadResource(Rez.Drawables.Temperature);
+    dc.drawBitmap(temp_x1 - bitmap.getWidth() * 1.1, temp_y, bitmap);
+    dc.drawText(temp_x1 + 5, temp_y, font, str, Graphics.TEXT_JUSTIFY_LEFT);
+
+    temp_y += bitmap.getHeight() * 1.2;
+    
+    str = Lang.format("$1$%", [data[Global.KEY_HUMIDITY]]);
+    bitmap = Application.loadResource(Rez.Drawables.Humidity);
+    dc.drawBitmap(temp_x1 - bitmap.getWidth() * 1.1, temp_y, bitmap);
+    dc.drawText(temp_x1 + 5, temp_y, font, str, Graphics.TEXT_JUSTIFY_LEFT);
+
+    //*************************************************************************
+    //City and date
     dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_RED);
 
     var moment = new Time.Moment(data[Global.KEY_DT]);
