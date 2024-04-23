@@ -3,7 +3,6 @@ using Toybox.System;
 using Toybox.Lang;
 using Toybox.Application;
 
-(:glance)
 module ForecastOWM {
   function startRequest(callback) {
     var url = "https://api.openweathermap.org/data/2.5/forecast";
