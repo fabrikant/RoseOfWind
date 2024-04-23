@@ -12,24 +12,31 @@ class RoseOfWindApp extends Application.AppBase {
     loop_factory_weak = null;
     AppBase.initialize();
     captureLocation();
+    startRequest();
   }
 
-  function onStart(state) {
+  function startRequest() {
     ForecastOWM.startRequest(self.method(:onWeatherUpdate));
   }
+
+  function onStart(state) {}
 
   function onStop(state) {}
 
   function getInitialView() {
-
-    var factory = new RoseOfWindLoopFactory();
-    loop_factory_weak = factory.weak();
-    var loop = new Toybox.WatchUi.ViewLoop(factory, {
-      :page => 0,
-      :wrap => true,
-      :color => Graphics.COLOR_PURPLE,
-    });
-    return [loop, new RoseOfWindLoopDelegate(loop)];
+    var owm_key = Application.Properties.getValue("keyOW");
+    if (owm_key.equals("")) {
+      return [new NoKeyView(), new NoKeyDelegate()];
+    } else {
+      var factory = new RoseOfWindLoopFactory();
+      loop_factory_weak = factory.weak();
+      var loop = new Toybox.WatchUi.ViewLoop(factory, {
+        :page => 0,
+        :wrap => true,
+        :color => Graphics.COLOR_PURPLE,
+      });
+      return [loop, new RoseOfWindLoopDelegate(loop)];
+    }
   }
 
   function getGlanceView() {
@@ -39,8 +46,8 @@ class RoseOfWindApp extends Application.AppBase {
   function onWeatherUpdate(code, data) {
     if (code == 200) {
       ForecastOWM.saveForecast(data);
-      if (loop_factory_weak != null){
-        if (loop_factory_weak.stillAlive()){
+      if (loop_factory_weak != null) {
+        if (loop_factory_weak.stillAlive()) {
           var factory = loop_factory_weak.get();
           factory.onWeatherUpdate();
         }

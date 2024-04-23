@@ -39,7 +39,7 @@ class RoseOfWindView extends WatchUi.View {
     var str = "";
     var font = Graphics.getVectorFont({
       :face => Global.vectorFontName(),
-      :size => Math.floor(dc.getHeight() * 0.12).toNumber(),
+      :size => Math.floor(dc.getHeight() * 0.1).toNumber(),
     });
     var font_h = Graphics.getFontHeight(font);
 
@@ -65,11 +65,36 @@ class RoseOfWindView extends WatchUi.View {
     );
 
     var temp_y = font_h;
-    if (rez != null) {
-      var bitmap = Application.loadResource(rez);
-      dc.drawBitmap(center[0] - bitmap.getWidth() / 2, temp_y, bitmap);
-      temp_y += bitmap.getHeight();
-    }
+
+    var bitmap = Application.loadResource(rez);
+    dc.drawBitmap(center[0] - bitmap.getWidth() / 2, temp_y, bitmap);
+    temp_y += bitmap.getHeight();
+
+    //*************************************************************************
+    //Date Time
+    var angle_offset = 42;
+    var moment = new Time.Moment(data[Global.KEY_DT]);
+    var info = Time.Gregorian.info(moment, Time.FORMAT_LONG);
+    dc.drawText(
+      dc.getWidth() / 4,
+      temp_y - font_h,
+      font,
+      Lang.format("$1$:$2$", [
+        info.hour.format("%02d"),
+        info.min.format("%02d"),
+      ]),
+      Graphics.TEXT_JUSTIFY_CENTER
+    );
+    dc.drawRadialText(
+      center[0],
+      center[1],
+      font,
+      Lang.format("$1$, $2$ $3$", [info.day_of_week, info.day, info.month]),
+      Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER,
+      90 - angle_offset,
+      center[1] - font_h * 1.2,
+      Graphics.RADIAL_TEXT_DIRECTION_CLOCKWISE
+    );
 
     //*************************************************************************
     //Temperature
@@ -78,7 +103,10 @@ class RoseOfWindView extends WatchUi.View {
       :size => Math.floor(dc.getHeight() * 0.2).toNumber(),
     });
     font_h = Graphics.getFontHeight(font);
-    dc.setColor(Global.getTempColor(data[Global.KEY_TEMP], color), color_bkgnd);
+    dc.setColor(
+      Global.getTempColor(data[Global.KEY_TEMP], color),
+      Graphics.COLOR_TRANSPARENT
+    );
     str = Global.convertTemperature(data[Global.KEY_TEMP]) + postfixTemp();
     dc.drawText(center[0] / 2, temp_y, font, str, Graphics.TEXT_JUSTIFY_CENTER);
 
@@ -120,7 +148,7 @@ class RoseOfWindView extends WatchUi.View {
     //*************************************************************************
     //Decoration
     temp_y += font_h + 5;
-    var temp_x1 = dc.getWidth() * 0.40;
+    var temp_x1 = dc.getWidth() * 0.4;
     var y_offset = dc.getHeight() * 0.9;
     dc.setColor(Graphics.COLOR_DK_GRAY, color_bkgnd);
     dc.setPenWidth(5);
@@ -129,7 +157,7 @@ class RoseOfWindView extends WatchUi.View {
     dc.setPenWidth(1);
     dc.drawLine(temp_x1, temp_y, temp_x1, y_offset);
 
-    var temp_x2 = dc.getWidth() * 0.15;
+    var temp_x2 = dc.getWidth() * 0.1;
     dc.setColor(Graphics.COLOR_DK_GRAY, color_bkgnd);
     dc.setPenWidth(5);
     dc.drawLine(temp_x2, temp_y, dc.getWidth() - temp_x2, temp_y);
@@ -139,54 +167,45 @@ class RoseOfWindView extends WatchUi.View {
 
     //*************************************************************************
     //Other values
-    font = Graphics.getVectorFont({
-      :face => Global.vectorFontName(),
-      :size => Math.floor(dc.getHeight() * 0.1).toNumber(),
-    });
+    // font = Graphics.getVectorFont({
+    //   :face => Global.vectorFontName(),
+    //   :size => Math.floor(dc.getHeight() * 0.1).toNumber(),
+    // });
 
     temp_y += 5;
     dc.setColor(color, color_bkgnd);
 
     str = Global.convertPressure(data[Global.KEY_PRESSURE]);
-    var bitmap = Application.loadResource(Rez.Drawables.Pressure);
+    bitmap = Application.loadResource(Rez.Drawables.Pressure);
     dc.drawBitmap(temp_x1 - bitmap.getWidth() * 1.1, temp_y, bitmap);
     dc.drawText(temp_x1 + 5, temp_y, font, str, Graphics.TEXT_JUSTIFY_LEFT);
 
     temp_y += bitmap.getHeight() * 1.2;
-    
+
     str =
       Global.convertTemperature(data[Global.KEY_TEMP_FEELS_LIKE]) +
-      postfixTemp() +" "+Application.loadResource(Rez.Strings.Feels);
+      postfixTemp() +
+      " " +
+      Application.loadResource(Rez.Strings.Feels);
     bitmap = Application.loadResource(Rez.Drawables.Temperature);
     dc.drawBitmap(temp_x1 - bitmap.getWidth() * 1.1, temp_y, bitmap);
     dc.drawText(temp_x1 + 5, temp_y, font, str, Graphics.TEXT_JUSTIFY_LEFT);
 
     temp_y += bitmap.getHeight() * 1.2;
-    
+
     str = Lang.format("$1$%", [data[Global.KEY_HUMIDITY]]);
     bitmap = Application.loadResource(Rez.Drawables.Humidity);
     dc.drawBitmap(temp_x1 - bitmap.getWidth() * 1.1, temp_y, bitmap);
     dc.drawText(temp_x1 + 5, temp_y, font, str, Graphics.TEXT_JUSTIFY_LEFT);
 
     //*************************************************************************
-    //City and date
-    dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_RED);
-
-    var moment = new Time.Moment(data[Global.KEY_DT]);
-    var info = Time.Gregorian.info(moment, Time.FORMAT_LONG);
-    str = Lang.format("$6$ $1$, $2$ $3$ $4$:$5$", [
-      info.day_of_week,
-      info.day,
-      info.month,
-      info.hour.format("%02d"),
-      info.min.format("%02d"),
-      data[Global.KEY_CITY],
-    ]);
+    //City
+    dc.setColor(color, Graphics.COLOR_TRANSPARENT);
     dc.drawRadialText(
       center[0],
       center[1],
       font,
-      str,
+      data[Global.KEY_CITY],
       Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER,
       270,
       center[1] - Graphics.getFontHeight(font) / 2,

@@ -67,7 +67,6 @@ module Global {
   }
 
   function convertPressure(value) {
-    System.println(value);
     var rawData = value*100;
     var unit_str = "";
     var unit = Application.Properties.getValue("PressureUnit");
