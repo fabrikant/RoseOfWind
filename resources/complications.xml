@@ -1,5 +1,9 @@
 <complications>
-  <complication id="0" access="private" longLabel="@Strings.ComplicationLongLabel" shortLabel="@Strings.ComplicationShortLabel" icon="@Drawables.LauncherIcon" glancePreview="false">
+  <complication id="0" access="protected" 
+  longLabel="@Strings.ComplicationLongLabel" 
+  shortLabel="@Strings.ComplicationShortLabel" 
+  icon="@Drawables.ComplicationIcon"
+   glancePreview="false">
     <faceIt defaultText="@Strings.AppName" />
   </complication>
 </complications>
