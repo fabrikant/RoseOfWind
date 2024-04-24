@@ -11,12 +11,20 @@ class RoseOfWindApp extends Application.AppBase {
   function initialize() {
     menu_weak = null;
     AppBase.initialize();
-    captureLocation();
   }
 
-  function onStart(state) {}
+  function onStart(state) {
+    captureLocation();
+    updateComplications();
+  }
 
   function onStop(state) {}
+
+  function updateComplications() {
+    Complications.updateComplication(0, {
+      :value => Application.Properties.getValue("keyOW"),
+    });
+  }
 
   function getInitialView() {
     var owm_key = Application.Properties.getValue("keyOW");

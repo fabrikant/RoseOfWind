@@ -24,8 +24,8 @@
     <string id="Lat" scope="foreground">Latitude</string>
     <string id="Lon" scope="foreground">Longitude</string>
 
-    <string id="ComplicationLongLabel" scope="foreground">ComplicationLongLabel</string>
-    <string id="ComplicationShortLabel" scope="foreground">ComplicationShortLabel</string>
+    <string id="ComplicationShortLabel" scope="foreground" translatable="false">OWM_key</string>
+
     <string id="Forecast" scope="foreground">Forecast</string>
 
 </strings>
