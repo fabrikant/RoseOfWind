@@ -8,11 +8,11 @@ import Toybox.WatchUi;
 
 class WeatherMenu extends WatchUi.CustomMenu {
   function initialize() {
-    CustomMenu.initialize(
-      System.getDeviceSettings().screenHeight / 4,
-      Graphics.COLOR_BLACK,
-      {}
-    );
+    var item_h = System.getDeviceSettings().screenHeight / 4;
+    CustomMenu.initialize(item_h, Graphics.COLOR_BLACK, {
+      :title => new TitleDrawable(item_h),
+      :titleItemHeight => item_h,
+    });
     addItems();
     ForecastOWM.startRequest(self.method(:onWeatherUpdate));
   }
@@ -62,7 +62,7 @@ class WeatherMenuItem extends WatchUi.CustomMenuItem {
     dc.setColor(color, Graphics.COLOR_BLACK);
     dc.clear();
     dc.drawLine(0, 0, dc.getWidth(), 0);
-    dc.drawLine(0, dc.getHeight(), dc.getWidth(), dc.getHeight());
+    dc.drawLine(0, dc.getHeight() - 1, dc.getWidth(), dc.getHeight() - 1);
 
     //*************************************************************************
     //Date condition
@@ -167,6 +167,36 @@ class WeatherMenuItem extends WatchUi.CustomMenuItem {
       :width => 0,
       :height => 0,
     });
+  }
+}
+
+class TitleDrawable extends WatchUi.Drawable {
+  function initialize(height) {
+    Drawable.initialize({
+      :identifier => 0,
+      :locX => 0,
+      :locY => 0,
+      :width => System.getDeviceSettings().screenWidth,
+      :height => height,
+    });
+  }
+
+  function draw(dc) {
+    var color = Graphics.COLOR_WHITE;
+    dc.setColor(color, Graphics.COLOR_BLACK);
+    dc.clear();
+    var font = Graphics.getVectorFont({
+      :face => Global.vectorFontName(),
+      :size => Math.floor(dc.getHeight() / 2).toNumber(),
+    });
+
+    dc.drawText(
+      dc.getWidth() / 2,
+      dc.getHeight() / 2,
+      font,
+      Application.loadResource(Rez.Strings.Forecast),
+      Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+    );
   }
 }
 

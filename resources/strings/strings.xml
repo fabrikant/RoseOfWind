@@ -26,5 +26,6 @@
 
     <string id="ComplicationLongLabel" scope="foreground">ComplicationLongLabel</string>
     <string id="ComplicationShortLabel" scope="foreground">ComplicationShortLabel</string>
+    <string id="Forecast" scope="foreground">Forecast</string>
 
 </strings>
