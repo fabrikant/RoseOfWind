@@ -45,18 +45,23 @@ class RoseOfWindApp extends Application.AppBase {
 
   function captureLocation() {
     var location = Activity.getActivityInfo().currentLocation;
+    var loc_degrees = [0f, 0f];
     if (location != null) {
-      var degr = location.toDegrees();
-      Application.Properties.setValue("Lat", degr[0]);
-      Application.Properties.setValue("Lon", degr[1]);
+      loc_degrees = location.toDegrees();
+    }
+    if (loc_degrees[0] != 0f || loc_degrees[1] != 0f) {
+      Application.Properties.setValue("Lat", loc_degrees[0]);
+      Application.Properties.setValue("Lon", loc_degrees[1]);
     } else {
       var weather = Toybox.Weather.getCurrentConditions();
       if (weather != null) {
         location = weather.observationLocationPosition;
         if (location != null) {
-          var degr = location.toDegrees();
-          Application.Properties.setValue("Lat", degr[0]);
-          Application.Properties.setValue("Lon", degr[1]);
+          loc_degrees = location.toDegrees();
+        }
+        if (loc_degrees[0] != 0f || loc_degrees[1] != 0f) {
+          Application.Properties.setValue("Lat", loc_degrees[0]);
+          Application.Properties.setValue("Lon", loc_degrees[1]);
         }
       }
     }
