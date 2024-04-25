@@ -10,8 +10,8 @@ class WeatherMenu extends WatchUi.CustomMenu {
   function initialize() {
     var item_h = System.getDeviceSettings().screenHeight / 4;
     CustomMenu.initialize(item_h, Graphics.COLOR_BLACK, {
-      :title => new TitleDrawable(item_h),
-      :titleItemHeight => item_h,
+      :title => new TitleDrawable(item_h / 2),
+      :titleItemHeight => item_h / 2,
     });
     addItems();
     ForecastOWM.startRequest(self.method(:onWeatherUpdate));

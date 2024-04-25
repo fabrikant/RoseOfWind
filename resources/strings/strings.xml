@@ -1,5 +1,6 @@
 <strings>
-    <string id="AppName">RoseOfWind</string>
+    <string id="AppName" translatable="false">RoseOfWind</string>
+    <string id="ComplicationShortLabel" scope="foreground" translatable="false">owm_key</string>
 
     <string id="NoData" scope="glance">No data</string>
     <string id="WindSpeedUnit">Wind speed unit</string>
@@ -23,8 +24,6 @@
     <string id="InputKey" scope="foreground">Input API key\nfor weather</string>
     <string id="Lat" scope="foreground">Latitude</string>
     <string id="Lon" scope="foreground">Longitude</string>
-
-    <string id="ComplicationShortLabel" scope="foreground" translatable="false">OWM_key</string>
 
     <string id="Forecast" scope="foreground">Forecast</string>
 

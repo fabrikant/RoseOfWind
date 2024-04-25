@@ -1,0 +1,28 @@
+<strings>
+
+    <string id="NoData" scope="glance">Нет данных</string>
+    <string id="WindSpeedUnit">Ед. изм. скорости ветра</string>
+    <string id="SpeedUnitMSec" scope="glance">м/с</string>
+    <string id="SpeedUnitKmH" scope="glance">км/ч</string>
+    <string id="SpeedUnitMileH" scope="glance">мл/ч</string>
+    <string id="SpeedUnitFtSec" scope="glance">фт/с</string>
+    <string id="SpeedUnitBeauf" scope="glance">боф</string>
+    <string id="SpeedUnitKnots" scope="glance">узл</string>
+
+    <!--PRESSURE UNITS -->
+    <string id="PressureUnit" scope="foreground">Ед. изм. давления</string>
+    <string id="PrUMmHg" scope="foreground">мм Рт ст</string>
+    <string id="PrUPsi" scope="foreground">фнт/дюйм</string>
+    <string id="PrUInchHg" scope="foreground">дюйм Рт ст</string>
+    <string id="PrUBar" scope="foreground">милибар</string>
+    <string id="PrUKPa" scope="foreground">кПА</string>
+
+    <string id="Feels" scope="foreground">ощущ</string>
+    <string id="keyOW" scope="foreground">Ключ API для погоды</string>
+    <string id="InputKey" scope="foreground">Введите ключ API\nдля погоды</string>
+    <string id="Lat" scope="foreground">Широта</string>
+    <string id="Lon" scope="foreground">Долгота</string>
+
+    <string id="Forecast" scope="foreground">Прогноз</string>
+
+</strings>

@@ -21,9 +21,11 @@ class RoseOfWindApp extends Application.AppBase {
   function onStop(state) {}
 
   function updateComplications() {
-    Complications.updateComplication(0, {
-      :value => Application.Properties.getValue("keyOW"),
-    });
+    try {
+      Complications.updateComplication(0, {
+        :value => Application.Properties.getValue("keyOW"),
+      });
+    } catch (ex) {}
   }
 
   function getInitialView() {

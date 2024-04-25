@@ -72,7 +72,6 @@ class RoseOfWindView extends WatchUi.View {
 
     //*************************************************************************
     //Date Time
-    //var angle_offset = 42;
     var moment = new Time.Moment(data[Global.KEY_DT]);
     var info = Time.Gregorian.info(moment, Time.FORMAT_LONG);
     var info_short = Time.Gregorian.info(moment, Time.FORMAT_SHORT);
@@ -98,8 +97,10 @@ class RoseOfWindView extends WatchUi.View {
       Graphics.TEXT_JUSTIFY_CENTER
     );
 
+    var x_offset =
+      dc.getTextWidthInPixels(info.day_of_week.substring(1, 2), font) / 2;
     dc.drawText(
-      center[0] + bitmap.getWidth() / 2,
+      center[0] + bitmap.getWidth() / 2 + x_offset,
       temp_y - 2 * font_h,
       font,
       info.day_of_week,
@@ -178,11 +179,6 @@ class RoseOfWindView extends WatchUi.View {
 
     //*************************************************************************
     //Other values
-    // font = Graphics.getVectorFont({
-    //   :face => Global.vectorFontName(),
-    //   :size => Math.floor(dc.getHeight() * 0.1).toNumber(),
-    // });
-
     temp_y += 5;
     dc.setColor(color, color_bkgnd);
 
