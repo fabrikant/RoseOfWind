@@ -8,18 +8,39 @@ import Toybox.Lang;
 (:glance)
 class RoseOfWindGlance extends WatchUi.GlanceView {
   var wind_bitmap;
+  var update_error;
 
   function initialize() {
     CurrentOWM.startRequest(self.method(:onWeatherUpdate));
     wind_bitmap = null;
+    update_error = null;
     GlanceView.initialize();
   }
 
   function onUpdate(dc) {
+
     var weather = Application.Storage.getValue(Global.KEY_CURRENT);
-    if (weather == null) {
-      dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-      dc.clear();
+    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+    dc.clear();
+
+    if (update_error != null) {
+      dc.drawText(
+        0,
+        0,
+        Graphics.FONT_GLANCE,
+        "error code: " + update_error[:code].toString(),
+        Graphics.TEXT_JUSTIFY_LEFT
+      );
+      if (update_error[:data] != null) {
+        dc.drawText(
+          0,
+          Graphics.getFontHeight(Graphics.FONT_GLANCE),
+          Graphics.FONT_GLANCE,
+          update_error[:data],
+          Graphics.TEXT_JUSTIFY_LEFT
+        );
+      }
+    } else if (weather == null) {
       dc.drawText(
         dc.getWidth() / 2,
         dc.getHeight() / 2,
@@ -40,9 +61,6 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
     var font = Graphics.FONT_GLANCE;
     var font_h = Graphics.getFontHeight(font);
     var temp_y = 0;
-
-    // dc.drawLine(0, 0, dc.getWidth(), 0);
-    // dc.drawLine(0, dc.getHeight()-1, dc.getWidth(), dc.getHeight()-1);
 
     //condition
     dc.drawText(
@@ -133,7 +151,13 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
   function onWeatherUpdate(code, data) {
     if (code == 200) {
       CommonOWM.saveCurrentCondition(data);
-      WatchUi.requestUpdate();
+    } else {
+      CommonOWM.saveCurrentCondition(null);
+      update_error = {
+        :code => code,
+        :data => data["message"],
+      };
     }
+    WatchUi.requestUpdate();
   }
 }

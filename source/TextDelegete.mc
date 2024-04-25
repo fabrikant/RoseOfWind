@@ -12,7 +12,6 @@ class TextDelegate extends WatchUi.TextPickerDelegate {
   function onTextEntered(text, changed) {
     if (changed ) {
       Application.Properties.setValue(prop_name, text);
-      getApp().startRequest();
     }
   }
 

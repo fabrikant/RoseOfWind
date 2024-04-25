@@ -7,10 +7,13 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 
 class WeatherMenu extends WatchUi.CustomMenu {
+  private var title_drawable;
+
   function initialize() {
     var item_h = System.getDeviceSettings().screenHeight / 4;
-    CustomMenu.initialize(item_h, Graphics.COLOR_BLACK, {
-      :title => new TitleDrawable(item_h / 2),
+    title_drawable = new TitleDrawable(item_h / 2);
+    title_drawable = CustomMenu.initialize(item_h, Graphics.COLOR_BLACK, {
+      :title => title_drawable,
       :titleItemHeight => item_h / 2,
     });
     addItems();
@@ -38,8 +41,23 @@ class WeatherMenu extends WatchUi.CustomMenu {
           addItem(new WeatherMenuItem(i, data[i]));
         }
       }
-      WatchUi.requestUpdate();
+    } else {
+      ForecastOWM.saveForecast(null);
+      var update_error = {
+        :code => code,
+        :data => inet_data["message"],
+      };
+      WatchUi.pushView(
+        new UpdateErrorView(update_error),
+        null,
+        WatchUi.SLIDE_IMMEDIATE
+      );
+
+      while (getItem(0) != null){
+        deleteItem(0);
+      }
     }
+    WatchUi.requestUpdate();
   }
 }
 

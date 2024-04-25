@@ -6,24 +6,28 @@ import Toybox.Weather;
 (:glance)
 module CommonOWM {
   function saveCurrentCondition(data) {
-    var result = {
-      Global.KEY_ID => data["weather"][0]["id"],
-      Global.KEY_ICON => data["weather"][0]["icon"],
-      Global.KEY_DESCRIPTION => data["weather"][0]["description"],
-      Global.KEY_MAIN => data["weather"][0]["main"],
-      Global.KEY_TEMP => data["main"]["temp"],
-      Global.KEY_TEMP_FEELS_LIKE => data["main"]["feels_like"],
-      Global.KEY_TEMP_MIN => data["main"]["temp_min"],
-      Global.KEY_TEMP_MAX => data["main"]["temp_max"],
-      Global.KEY_PRESSURE => data["main"]["pressure"],
-      Global.KEY_HUMIDITY => data["main"]["humidity"],
-      Global.KEY_WIND_DEG => data["wind"]["deg"],
-      Global.KEY_WIND_SPEED => data["wind"]["speed"],
-      Global.KEY_DT => data["dt"],
-      Global.KEY_CITY => data["name"],
-    };
+    if (data == null) {
+      Application.Storage.deleteValue(Global.KEY_CURRENT);
+    } else {
+      var result = {
+        Global.KEY_ID => data["weather"][0]["id"],
+        Global.KEY_ICON => data["weather"][0]["icon"],
+        Global.KEY_DESCRIPTION => data["weather"][0]["description"],
+        Global.KEY_MAIN => data["weather"][0]["main"],
+        Global.KEY_TEMP => data["main"]["temp"],
+        Global.KEY_TEMP_FEELS_LIKE => data["main"]["feels_like"],
+        Global.KEY_TEMP_MIN => data["main"]["temp_min"],
+        Global.KEY_TEMP_MAX => data["main"]["temp_max"],
+        Global.KEY_PRESSURE => data["main"]["pressure"],
+        Global.KEY_HUMIDITY => data["main"]["humidity"],
+        Global.KEY_WIND_DEG => data["wind"]["deg"],
+        Global.KEY_WIND_SPEED => data["wind"]["speed"],
+        Global.KEY_DT => data["dt"],
+        Global.KEY_CITY => data["name"],
+      };
 
-    Application.Storage.setValue(Global.KEY_CURRENT, result);
+      Application.Storage.setValue(Global.KEY_CURRENT, result);
+    }
   }
 
   function getLang() {
