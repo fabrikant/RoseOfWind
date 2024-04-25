@@ -12,11 +12,34 @@ class NoKeyView extends WatchUi.View {
     dc.clear();
     var owm_key = Application.Properties.getValue("keyOW");
     if (owm_key.equals("")) {
+      var font_size = dc.getHeight() * 0.1;
+      var font = Graphics.getVectorFont({
+        :face => Global.vectorFontName(),
+        :size => font_size,
+      });
+      var str =
+        Application.loadResource(Rez.Strings.InputKey) +
+        "\n" +
+        Application.loadResource(Rez.Strings.Lat) +
+        ": " +
+        Application.Properties.getValue("Lat") +
+        "\n" +
+        Application.loadResource(Rez.Strings.Lon) +
+        ": " +
+        Application.Properties.getValue("Lon");
+
+      str = Graphics.fitTextToArea(
+        str,
+        font,
+        dc.getWidth() * 0.7,
+        dc.getHeight(),
+        Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+      );
       dc.drawText(
         dc.getWidth() / 2,
         dc.getHeight() / 2,
-        Graphics.FONT_SYSTEM_LARGE,
-        Application.loadResource(Rez.Strings.InputKey),
+        font,
+        str,
         Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
       );
     } else {
@@ -41,6 +64,8 @@ class NoKeyDelegate extends WatchUi.BehaviorDelegate {
   }
 
   public function onSelect() {
+    //криво работает ввод через телефон. теряется последний знак
+    return;
     WatchUi.pushView(
       new WatchUi.TextPicker(Application.Properties.getValue("keyOW")),
       new TextDelegate("keyOW"),

@@ -6,11 +6,15 @@ using Toybox.Application;
 (:glance)
 module CurrentOWM {
   function startRequest(callback) {
+    var owm_key = Application.Properties.getValue("keyOW");
+    if (owm_key.equals("")) {
+      return;
+    }
     var url = "https://api.openweathermap.org/data/2.5/weather";
     var parametres = {
       "lat" => Application.Properties.getValue("Lat"),
       "lon" => Application.Properties.getValue("Lon"),
-      "appid" => Application.Properties.getValue("keyOW"),
+      "appid" => owm_key,
       "units" => "metric",
       "lang" => CommonOWM.getLang(),
     };

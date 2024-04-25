@@ -19,7 +19,7 @@
 
     <string id="Feels" scope="foreground">ощущ</string>
     <string id="keyOW" scope="foreground">Ключ API для погоды</string>
-    <string id="InputKey" scope="foreground">Введите\nключ API\nдля погоды\nнажмите ENTER</string>
+    <string id="InputKey" scope="glance">Введите ключ API. Воспользуйтесь Connect IQ</string>
     <string id="Lat" scope="foreground">Широта</string>
     <string id="Lon" scope="foreground">Долгота</string>
 

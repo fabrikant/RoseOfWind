@@ -21,7 +21,7 @@
 
     <string id="Feels" scope="foreground">feels</string>
     <string id="keyOW" scope="foreground">API key for weather</string>
-    <string id="InputKey" scope="foreground">Input\nAPI key\nfor weather\npress\nENTER</string>
+    <string id="InputKey" scope="glance">Enterthe API key using the Connect IQ</string>
     <string id="Lat" scope="foreground">Latitude</string>
     <string id="Lon" scope="foreground">Longitude</string>
 

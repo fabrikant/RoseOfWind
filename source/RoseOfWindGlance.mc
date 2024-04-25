@@ -18,12 +18,27 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
   }
 
   function onUpdate(dc) {
-
     var weather = Application.Storage.getValue(Global.KEY_CURRENT);
     dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
     dc.clear();
 
-    if (update_error != null) {
+    var owm_key = Application.Properties.getValue("keyOW");
+    if (owm_key.equals("")) {
+      var str = Graphics.fitTextToArea(
+        Application.loadResource(Rez.Strings.InputKey),
+        Graphics.FONT_GLANCE,
+        dc.getWidth() ,
+        dc.getHeight(),
+        Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+      );
+      dc.drawText(
+        dc.getWidth() / 2,
+        dc.getHeight() / 2,
+        Graphics.FONT_GLANCE,
+        str,
+        Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+      );
+    } else if (update_error != null) {
       dc.drawText(
         0,
         0,
