@@ -27,7 +27,7 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
       var str = Graphics.fitTextToArea(
         Application.loadResource(Rez.Strings.InputKey),
         Graphics.FONT_GLANCE,
-        dc.getWidth() ,
+        dc.getWidth(),
         dc.getHeight(),
         Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
       );
@@ -168,9 +168,13 @@ class RoseOfWindGlance extends WatchUi.GlanceView {
       CommonOWM.saveCurrentCondition(data);
     } else {
       CommonOWM.saveCurrentCondition(null);
+      var message = null;
+      if (data instanceof Lang.Dictionary) {
+        message = data["message"];
+      }
       update_error = {
         :code => code,
-        :data => data["message"],
+        :data => message,
       };
     }
     WatchUi.requestUpdate();

@@ -43,9 +43,13 @@ class WeatherMenu extends WatchUi.CustomMenu {
       }
     } else {
       ForecastOWM.saveForecast(null);
+      var message = null;
+      if (data instanceof Lang.Dictionary) {
+        message = data["message"];
+      }
       var update_error = {
         :code => code,
-        :data => inet_data["message"],
+        :data => message,
       };
       WatchUi.pushView(
         new UpdateErrorView(update_error),
@@ -53,7 +57,7 @@ class WeatherMenu extends WatchUi.CustomMenu {
         WatchUi.SLIDE_IMMEDIATE
       );
 
-      while (getItem(0) != null){
+      while (getItem(0) != null) {
         deleteItem(0);
       }
     }
