@@ -1,5 +1,7 @@
 <strings>
 
+    <string id="ShowCurrentCondition" scope="foreground" translatable="false">Показывать текущую погоду</string>
+
     <string id="NoData" scope="glance">Нет данных</string>
     <string id="WindSpeedUnit">Ед. изм. скорости ветра</string>
     <string id="SpeedUnitMSec" scope="glance">м/с</string>

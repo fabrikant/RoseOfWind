@@ -12,6 +12,10 @@
 		<settingConfig type="numeric" />
 	</setting>
 
+	<setting propertyKey="@Properties.ShowCurrentCondition" title="@Strings.ShowCurrentCondition">
+		<settingConfig type="boolean" />
+	</setting>
+
 	<!--UNIT WIND SPEED -->
 	<setting propertyKey="@Properties.WindSpeedUnit" title="@Strings.WindSpeedUnit">
 		<settingConfig type="list">

@@ -1,6 +1,7 @@
 <strings>
     <string id="AppName" translatable="false">RoseOfWind</string>
     <string id="ComplicationShortLabel" scope="foreground" translatable="false">owm_key</string>
+    <string id="ShowCurrentCondition" scope="foreground" translatable="false">Show curren condition</string>
 
     <string id="NoData" scope="glance">No data</string>
     <string id="WindSpeedUnit">Wind speed unit</string>

@@ -5,5 +5,6 @@
 	<property id="Lon" type="float">0</property>
 	<property id="WindSpeedUnit" type="number">0</property>
 	<property id="PressureUnit" type="number">0</property>
+	<property id="ShowCurrentCondition" type="boolean">true</property>
 	
 </properties>

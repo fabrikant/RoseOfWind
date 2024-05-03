@@ -33,10 +33,21 @@ class RoseOfWindApp extends Application.AppBase {
     if (owm_key.equals("")) {
       return [new NoKeyView(), new NoKeyDelegate()];
     } else {
-      var menu = new WeatherMenu();
-      menu_weak = menu.weak();
-      return [menu, new WeatherMenuDelegate()];
+      if (Application.Properties.getValue("ShowCurrentCondition")) {
+        var data = Application.Storage.getValue(Global.KEY_CURRENT);
+        var view = new RoseOfWindView(data);
+        CurrentOWM.startRequest(view.method(:onWeatherUpdate));
+        return [view, new RoseOfWindCurrentViewDelegate()];
+      } else {
+        return getForecastViewArray();
+      }
     }
+  }
+
+  function getForecastViewArray() {
+    var menu = new WeatherMenu();
+    menu_weak = menu.weak();
+    return [menu, new WeatherMenuDelegate()];
   }
 
   function getGlanceView() {

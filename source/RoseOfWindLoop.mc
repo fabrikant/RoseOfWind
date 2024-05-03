@@ -36,7 +36,7 @@ class RoseOfWindLoopFactory extends WatchUi.ViewLoopFactory {
     if (data instanceof Lang.Array){
       page_data = data[page];
     }
-    return [new RoseOfWindView(page, page_data), new RoseOfWindViewDelegate(page)];
+    return [new RoseOfWindView(page_data), new RoseOfWindViewDelegate(page)];
   }
 
   function getSize() {
