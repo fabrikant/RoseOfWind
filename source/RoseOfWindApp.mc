@@ -35,9 +35,7 @@ class RoseOfWindApp extends Application.AppBase {
     } else {
       if (Application.Properties.getValue("ShowCurrentCondition")) {
         var data = Application.Storage.getValue(Global.KEY_CURRENT);
-        var view = new RoseOfWindView(data);
-        CurrentOWM.startRequest(view.method(:onWeatherUpdate));
-        return [view, new RoseOfWindCurrentViewDelegate()];
+        return [new RoseOfWindCurrentView(data), new RoseOfWindCurrentViewDelegate()];
       } else {
         return getForecastViewArray();
       }

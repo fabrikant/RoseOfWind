@@ -218,25 +218,6 @@ class RoseOfWindView extends WatchUi.View {
       Graphics.RADIAL_TEXT_DIRECTION_COUNTER_CLOCKWISE
     );
   }
-
-  function onWeatherUpdate(code, data) {
-    if (code == 200) {
-      CommonOWM.saveCurrentCondition(data);
-      data = Application.Storage.getValue(Global.KEY_CURRENT);
-    } else {
-      CommonOWM.saveCurrentCondition(null);
-      var message = null;
-      if (data instanceof Lang.Dictionary) {
-        message = data["message"];
-      }
-      update_error = {
-        :code => code,
-        :data => message,
-      };
-    }
-    WatchUi.requestUpdate();
-  }
-
 }
 
 class RoseOfWindViewDelegate extends WatchUi.BehaviorDelegate {
@@ -248,18 +229,6 @@ class RoseOfWindViewDelegate extends WatchUi.BehaviorDelegate {
   }
 
   public function onSelect() {
-    return true;
-  }
-}
-
-class RoseOfWindCurrentViewDelegate extends WatchUi.BehaviorDelegate {
-  public function initialize() {
-    BehaviorDelegate.initialize();
-  }
-
-  public function onSelect() {
-    var array = getApp().getForecastViewArray();
-    WatchUi.pushView(array[0], array[1], WatchUi.SLIDE_IMMEDIATE);
     return true;
   }
 }
