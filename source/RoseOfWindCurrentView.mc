@@ -6,15 +6,17 @@ import Toybox.Math;
 import Toybox.System;
 
 class RoseOfWindCurrentView extends RoseOfWindView {
-  
   function initialize(data) {
     RoseOfWindView.initialize(data);
+  }
+
+  function onShow() {
     CurrentOWM.startRequest(self.method(:onWeatherUpdate));
   }
 
-  function onWeatherUpdate(code, data) {
+  function onWeatherUpdate(code, inet_data) {
     if (code == 200) {
-      CommonOWM.saveCurrentCondition(data);
+      CommonOWM.saveCurrentCondition(inet_data);
     } else {
       CommonOWM.saveCurrentCondition(null);
     }
