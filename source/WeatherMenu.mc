@@ -44,8 +44,8 @@ class WeatherMenu extends WatchUi.CustomMenu {
     } else {
       ForecastOWM.saveForecast(null);
       var message = null;
-      if (data instanceof Lang.Dictionary) {
-        message = data["message"];
+      if (inet_data instanceof Lang.Dictionary) {
+        message = inet_data["message"];
       }
       var update_error = {
         :code => code,
